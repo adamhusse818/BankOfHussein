@@ -2,7 +2,7 @@
 	@Program		: Python Bank Script
 	@Author 		: Adam Hussein
 	@Author School	: Virginia Commonwealth University
-	@Author Major	: Computer Science
+	@Author Major	: Physics
 	@Description	: This is the Bank module that sets up the BOH system.
 					  It will be used to set up the bank class and functions that
 					  are there to help the user use the system.
