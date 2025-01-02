@@ -2,7 +2,7 @@
 	@Program		: Python Main Script
 	@Author 		: Adam Hussein
 	@Author School	: Virginia Commonwealth University
-	@Author Major	: Computer Science
+	@Author Major	: Physics
 	@Description	: This is the main module that runs the BOH system
 					  It is an infinite loop that will only terminate if done forcefully.
 					  ***This is a personal project that is not intended f public use nor
