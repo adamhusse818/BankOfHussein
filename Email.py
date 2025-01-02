@@ -2,7 +2,7 @@
 	@Program		   : Python Email Script
 	@Author 		   : Adam Hussein
 	@Author School	   : Virginia Commonwealth University
-	@Author Major	   : Computer Science
+	@Author Major	   : Physics
 	@Description	   : This is the module that runs the email system of BOH.
 						 ***This is a personal project that is not intended for public use nor
 					  	 for solving any real world problems.***
@@ -22,6 +22,6 @@ def send_email(sbj, body, recipients):
 	server.ehlo()
 	server.starttls()
 	server.ehlo()
-	server.login(sender, 'gikwpntoodcmtjxc')
+	server.login(sender, 'gikwpntoodcmtjxc') # Create your own password as this is deleted
 	server.sendmail(sender, recipients, msg.as_string())
 	server.quit()
