@@ -77,8 +77,11 @@ class Bank:
 
 		# Gather all the information needed and generate account and routing numbers
 		f = open(file_name, 'a')
-		n = input('Enter your first name: ').strip()
-		n = n + ' ' + input('Enter your last name: ').strip()
+		first = input('Enter your first name: ').strip()
+		first = first[0].upper() + first[1:]
+		last = input('Enter your last name: ').strip()
+		last = last[0].upper() + last[1:]
+		name = first + ' ' + last
 
 		# For the email, we must check to make sure it is a real, unused, and valid email
 		e = input('Enter your email: ')
@@ -99,16 +102,16 @@ class Bank:
 			amount = input('Please enter a valid number: $')
 		amount = float(amount)
 		notifications = input('Would you like to receive notifications via email regarding changes to your account'
-							 ' (deposits and withdrawals)? ').upper()
+							 ' (yes or no)? ').upper()
 		while notifications != 'YES' and notifications != 'NO':
 			notifications = input('Please say "yes" or "no": ').upper()
 
 		# Now, we add person to our text file and increment total amount of users
-		f.write('\n%s, %s, %s, %s, %s, %s, %s, %.2f' % (n, e, notifications, account_num, routing_num, username, pw, amount))
+		f.write('\n%s, %s, %s, %s, %s, %s, %s, %.2f' % (name, e, notifications, account_num, routing_num, username, pw, amount))
 		f.close()
 		print('\nSuccess! Your account was created.\n')
 		user_count += 1
-		p = Bank(n, e, notifications, account_num, routing_num, username, pw, amount)
+		p = Bank(name, e, notifications, account_num, routing_num, username, pw, amount)
 
 		# Now we email the user to confirm everything
 		p.send_confirmation_email()
@@ -500,7 +503,7 @@ class Bank:
 					count2 += 1
 
 				# Check to see if we reached the end!
-				if count2 > user_count:
+				if count2 >= user_count:
 					print('No account is associated with that username. Please try again.\n')
 					return Bank.sign_in()
 			break
