@@ -16,8 +16,7 @@ while True:
 	c = input('To create an account, please type "create." Type "exit" to exit.\n')
 	if c.lower() == 'create':
 		Bank.create_account()
-		p = Bank.sign_in()
-		Bank.initiate(p)
+		continue
 	elif c.lower() == 'sign in':
 		p = Bank.sign_in()
 		Bank.initiate(p)
